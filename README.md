@@ -22,7 +22,9 @@ Use the project structure that suits you best. We are interested in seeing your 
 
 Invoke the REST API using a <code><b>POST</b></code>
 
-REST API at https://us-aws/get-product
+REST API at 
+
+https://app.swaggerhub.com/apis/don-chambitas/duro_code_challenge/1.0.0#/Products/viewDetail
 
 Request Format
 
