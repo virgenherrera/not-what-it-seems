@@ -121,6 +121,6 @@ Make the view responsive for smartphones
 
 #### Super Bonus (optional)
 
-Make some Unit Test
+Make some Unit Test using Cypress / Puppeteer
 
-
+Ready? Go!
