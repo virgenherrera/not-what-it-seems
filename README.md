@@ -117,7 +117,15 @@ Render the response using this figma design
 
 https://www.figma.com/file/D6QayJ8zbNplrk4QzxegeT/Duro-Labs?node-id=0%3A1
 
-#### Third Step (optional)
+#### Third Step
+
+Make an REST API to save in database the user selection. Use NodeJs v12+ and Express. Feel free to use the best approach (architecture) in the backend. Also feel free to define de contract interface in your REST API, dou your best! To communicate with the data base, use the following MongoDb Atlas connection string 
+
+mongodb+srv://<username>:<password>@cluster0.o33fi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+Your username and password will be shared by email  
+
+#### Bonus (optional)
 
 Make the view responsive for smartphones
 
