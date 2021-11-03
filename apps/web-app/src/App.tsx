@@ -1,13 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { useGetProduct } from './hooks/use-get-product.hook';
+import React from "react";
+import "./App.scss";
+import { NavBar } from "./components/nav-bar/nav-bar.component";
+import { useGetProduct } from "./hooks/use-get-product.hook";
+import logo from "./logo.svg";
 
-function App() {
+export function App() {
   const state = useGetProduct();
-  
+
+  console.log(JSON.stringify(state, null, 2));
+
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -22,9 +26,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
   );
 }
-
-export default App;
