@@ -1,5 +1,3 @@
-import { RelatedProduct } from "./related-product.model";
-
 export class ProductDetail {
   company: string;
   cpn: string;
@@ -10,9 +8,8 @@ export class ProductDetail {
   modified: string;
   name: string;
   revision: number;
-  related: RelatedProduct[];
 
-  constructor(args: ProductDetail|any) {
+  constructor(args: ProductDetail | any) {
     this.company = args.company;
     this.cpn = args.cpn;
     this.created = new Date(args.created);
@@ -22,6 +19,5 @@ export class ProductDetail {
     this.modified = args.modified;
     this.name = args.name;
     this.revision = args.revision;
-    this.related = args.related.map((v:any) => new RelatedProduct(v));
   }
 }
