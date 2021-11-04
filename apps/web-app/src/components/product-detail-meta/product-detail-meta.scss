@@ -1,0 +1,18 @@
+.product-meta-table {
+  display: table;
+  width: 100%;
+}
+
+.product-meta-row {
+  display: table-row;
+}
+
+.product-meta-cell .divTableHead {
+  border: 1px solid #999999;
+  display: table-cell;
+  padding: 3px 10px;
+}
+
+.product-meta-body {
+  display: table-row-group;
+}

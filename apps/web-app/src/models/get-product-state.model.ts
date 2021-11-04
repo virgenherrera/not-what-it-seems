@@ -3,12 +3,12 @@ import { RelatedProduct } from "./related-product.model";
 
 export class GetProductState {
   loading: boolean;
-  productDetail: ProductDetail | null;
+  productDetail: Partial<ProductDetail>;
   relatedProducts: RelatedProduct[];
 
   constructor({
     loading = true,
-    productDetail = null,
+    productDetail = {},
     relatedProducts = [],
   }: Partial<GetProductState> = {}) {
     this.loading = loading;

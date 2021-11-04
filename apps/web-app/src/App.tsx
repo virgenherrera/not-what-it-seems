@@ -1,17 +1,14 @@
 import React from "react";
 import "./App.scss";
+import { ContentGrid } from "./components/content-grid/content-grid.component";
 import { NavBar } from "./components/nav-bar/nav-bar.component";
-import { useGetProduct } from "./hooks/use-get-product.hook";
 import logo from "./logo.svg";
 
 export function App() {
-  const state = useGetProduct();
-
-  console.log(JSON.stringify(state, null, 2));
-
   return (
     <div className="App">
       <NavBar />
+      <ContentGrid />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

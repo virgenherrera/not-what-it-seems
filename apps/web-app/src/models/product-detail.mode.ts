@@ -1,7 +1,7 @@
 export class ProductDetail {
   company: string;
   cpn: string;
-  created: Date;
+  created: string;
   createdBy: string;
   description: string;
   eid: string;
@@ -12,11 +12,11 @@ export class ProductDetail {
   constructor(args: ProductDetail | any) {
     this.company = args.company;
     this.cpn = args.cpn;
-    this.created = new Date(args.created);
+    this.created = `${args.created}`.substring(0, 10);
     this.createdBy = args.createdBy;
     this.description = args.description;
     this.eid = args.eid;
-    this.modified = args.modified;
+    this.modified = `${args.modified}`.substring(0, 10);
     this.name = args.name;
     this.revision = args.revision;
   }
