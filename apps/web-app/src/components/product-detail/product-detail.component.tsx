@@ -5,7 +5,6 @@ import "./product-detail.scss";
 
 export interface ProductDetailProps {
   productDetail: GetProductState["productDetail"];
-  relatedProducts: GetProductState["relatedProducts"];
 }
 
 export function ProductDetail({ productDetail }: ProductDetailProps) {
