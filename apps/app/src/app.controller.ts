@@ -12,7 +12,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
+  @Post( )
   postStuff(@Body(DtoValidationPipe.pipe) stuff: StuffDto) {
     console.log(stuff);
 
