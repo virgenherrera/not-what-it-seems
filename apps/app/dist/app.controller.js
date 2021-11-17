@@ -21,26 +21,17 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
-    getHello() {
-        return this.appService.getHello();
-    }
-    postStuff(stuff) {
-        console.log(stuff);
-        return { data: stuff };
+    async postStuff(stuffDto) {
+        const data = await this.appService.create(stuffDto);
+        return { data };
     }
 };
-__decorate([
-    (0, common_1.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getHello", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)(dto_validation_pipe_1.DtoValidationPipe.pipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [stuff_dto_1.StuffDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "postStuff", null);
 AppController = __decorate([
     (0, common_1.Controller)(),

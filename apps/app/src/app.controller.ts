@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { DtoValidationPipe } from './dto-validation.pipe';
 import { StuffDto } from './stuff.dto';
@@ -7,15 +7,10 @@ import { StuffDto } from './stuff.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+  @Post()
+  async postStuff(@Body(DtoValidationPipe.pipe) stuffDto: StuffDto) {
+    const data = await this.appService.create(stuffDto);
 
-  @Post( )
-  postStuff(@Body(DtoValidationPipe.pipe) stuff: StuffDto) {
-    console.log(stuff);
-
-    return { data: stuff };
+    return { data };
   }
 }

@@ -9,10 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
+const mongoose_1 = require("@nestjs/mongoose");
 const path_1 = require("path");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const db_connection_provider_1 = require("./db-connection.provider");
+const stuff_schema_1 = require("./schemas/stuff.schema");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -24,6 +26,7 @@ AppModule = __decorate([
                 envFilePath: (0, path_1.join)(__dirname, '../../../.env'),
             }),
             db_connection_provider_1.DbConnectionProvider.forRootAsync(),
+            mongoose_1.MongooseModule.forFeature([{ name: stuff_schema_1.Stuff.name, schema: stuff_schema_1.StuffSchema }]),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
