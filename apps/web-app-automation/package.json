@@ -1,0 +1,13 @@
+{
+  "name": "testcafe-talk",
+  "version": "1.0.0",
+  "description": "testcafe-talk",
+  "license": "MIT",
+  "scripts": {
+    "test": "testcafe chrome"
+  },
+  "devDependencies": {
+    "testcafe": "^1.16.1",
+    "typescript": "^4.4.4"
+  }
+}
