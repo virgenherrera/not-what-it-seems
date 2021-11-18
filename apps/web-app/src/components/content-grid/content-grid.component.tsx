@@ -1,23 +1,17 @@
 import React from "react";
 import { UseAppContext } from "../../context/app.context";
-import { useGetProduct } from "../../hooks/use-get-product.hook";
 import { ProductDetail } from "../product-detail/product-detail.component";
 import { RelatedProducts } from "../related-products/related-products.component";
 import "./content-grid.scss";
 
 export function ContentGrid() {
-  const { clickAction } = UseAppContext();
-  const { loading, productDetail, relatedProducts } = useGetProduct();
+  const appCtx = UseAppContext();
 
-  console.log(clickAction.state);
-
-  return loading ? (
-    <div className="content-grid"></div>
-  ) : (
+  return (
     <div className="content-grid">
-      <ProductDetail productDetail={productDetail} />
-      <RelatedProducts {...{ relatedProducts }} />
-      <pre>{JSON.stringify(clickAction.state, null, 2)}</pre>
+      <ProductDetail />
+      <RelatedProducts />
+      <pre>{JSON.stringify(appCtx.clickAction.state, null, 2)}</pre>
     </div>
   );
 }

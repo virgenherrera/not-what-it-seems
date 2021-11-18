@@ -1,13 +1,12 @@
 import React from "react";
-import { GetProductState } from "../../models/get-product-state.model";
+import { UseAppContext } from "../../context/app.context";
 import { ProductDetailMeta } from "../product-detail-meta/product-detail-meta.component";
 import "./product-detail.scss";
 
-export interface ProductDetailProps {
-  productDetail: GetProductState["productDetail"];
-}
+export function ProductDetail() {
+  const appCtx = UseAppContext();
+  const productDetail = appCtx.productDetail.state;
 
-export function ProductDetail({ productDetail }: ProductDetailProps) {
   return (
     <div className="product-detail-wrapper">
       <div className="product-highlight">
@@ -21,7 +20,7 @@ export function ProductDetail({ productDetail }: ProductDetailProps) {
         <div className="product-description">{productDetail?.description}</div>
       </div>
 
-      <ProductDetailMeta productDetail={productDetail} />
+      <ProductDetailMeta />
     </div>
   );
 }

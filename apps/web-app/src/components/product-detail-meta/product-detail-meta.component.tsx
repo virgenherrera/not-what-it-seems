@@ -1,12 +1,11 @@
 import React from "react";
-import { GetProductState } from "../../models/get-product-state.model";
+import { UseAppContext } from "../../context/app.context";
 import "./product-detail-meta.scss";
 
-export interface ProductDetailMetaProps {
-  productDetail: GetProductState["productDetail"];
-}
+export function ProductDetailMeta() {
+  const appCtx = UseAppContext();
+  const productDetail = appCtx.productDetail.state;
 
-export function ProductDetailMeta({ productDetail }: ProductDetailMetaProps) {
   return (
     <div className="product-meta-table">
       <div className="product-meta-body">

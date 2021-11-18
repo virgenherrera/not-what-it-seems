@@ -1,12 +1,7 @@
-import { GetProductState } from "../../models/get-product-state.model";
 import { RelatedProductRows } from "../related-product-rows/related-product-rows.component";
 import "./related-products.scss";
 
-export interface RelatedProductsProps {
-  relatedProducts: GetProductState["relatedProducts"];
-}
-
-export function RelatedProducts({ relatedProducts }: RelatedProductsProps) {
+export function RelatedProducts() {
   return (
     <div className="related-products">
       <div className="related-products-header">
@@ -25,7 +20,7 @@ export function RelatedProducts({ relatedProducts }: RelatedProductsProps) {
           <div className="related-products-cell title last">Action</div>
         </div>
 
-        <RelatedProductRows relatedProducts={relatedProducts} />
+        <RelatedProductRows />
       </div>
     </div>
   );
