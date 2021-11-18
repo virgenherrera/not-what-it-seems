@@ -40,14 +40,18 @@ export function RelatedProductRows() {
             </div>
           </div>
           <div className="related-products-cell row-options">
-            <div
-              className="option"
-              onClick={() =>
+            <button
+              type="button"
+              className="option option-add"
+              onClick={(ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+
                 appCtx.clickAction.dispatch({
                   type: StateClickOption.add,
                   payload: relatedProduct.eid,
-                })
-              }
+                });
+              }}
             >
               <object
                 className="icon"
@@ -55,15 +59,16 @@ export function RelatedProductRows() {
                 type="image/svg+xml"
                 aria-label="settings"
               ></object>
-            </div>
-            <div
-              className="option"
-              onClick={() =>
+            </button>
+            <button
+              type="button"
+              className="option option-edit"
+              onClick={() => {
                 appCtx.clickAction.dispatch({
                   type: StateClickOption.edit,
                   payload: relatedProduct.eid,
-                })
-              }
+                });
+              }}
             >
               <object
                 data={edit}
@@ -71,15 +76,16 @@ export function RelatedProductRows() {
                 className="icon"
                 aria-label="edit"
               ></object>
-            </div>
-            <div
-              className="option"
-              onClick={() =>
+            </button>
+            <button
+              type="button"
+              className="option option-remove"
+              onClick={() => {
                 appCtx.clickAction.dispatch({
                   type: StateClickOption.delete,
                   payload: relatedProduct.eid,
-                })
-              }
+                });
+              }}
             >
               <object
                 data={junk}
@@ -87,7 +93,7 @@ export function RelatedProductRows() {
                 className="icon"
                 aria-label="delete"
               ></object>
-            </div>
+            </button>
           </div>
         </div>
       ))}
